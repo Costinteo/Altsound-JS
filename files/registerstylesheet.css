@@ -1,0 +1,206 @@
+/* Smartphones (portrait and landscape) */
+@media all and (max-width: 480px) {
+    .hero {
+        height: 350px;
+    }
+
+    .bandlist .col {
+        width: 90%;
+    }
+
+    #home-subtitle {
+
+        font-size: 1.5rem !important;
+
+    }
+}
+
+/* Tablets */
+@media all and (min-width: 480px) and (max-width: 1023px) {
+    .hero {
+        height: 500px;
+    }
+
+    .bandlist .col {
+        width: 30%;
+    }
+}
+
+/* Large devices */
+@media all and (min-width: 1024px) {
+    .hero {
+        height: 800px;
+    }
+
+    .bandlist .col {
+        width: 25%;
+        height: auto;
+    }
+}
+
+#home-subtitle {
+
+    font-size: 8vh;
+
+}
+
+.text-center {
+
+    text-align: center;
+
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.ph {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.hero {
+    position: relative;
+    background-image: url("img/brianmolko.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero .text-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.hero-text {
+    font-size: 10vw;
+    color: white;
+    text-shadow: 5px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.title-font {
+
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.noise {
+    background-image: url("img/black-noise.gif");
+    background-repeat: repeat;
+    opacity: 0.5;
+    height: 100%
+}
+
+.register-page {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+
+}
+
+.form-input {
+    margin-top: 0.5rem;
+
+}
+
+.form-input input {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+
+}
+
+.flexrow {
+    display: flex;
+    width: 100%;
+}
+
+.captcha {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: rgb(78,34,122);
+    background: linear-gradient(0deg, rgba(78,34,122,1) 0%, rgba(138,95,181,1) 100%);
+    min-width: 300px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.35);
+}
+
+.captcha img {
+    border: 1px solid black;
+    border-radius: 10px;
+    background: mediumpurple;
+    padding: 1rem;
+    margin-left: 0.5rem;
+    height: 50px;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+.captcha-display {
+    border: 1px solid black;
+    border-radius: 5px;
+    background:  darkgrey;
+    min-width: 200px;
+    min-height: 100px;
+    align-self: flex-end;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+.captcha input {
+    padding: 0.5rem;
+    width: 100%;
+}
+
+#alert {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-bottom-color: transparent;
+    border-radius: .25rem;
+    text-align: center;
+}
+
+button {
+    color: white !important;
+    background-color: rebeccapurple;
+    border: 1px solid purple;
+    border-radius: 0.2rem;
+    padding: 0.25rem 0.75rem;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+button:hover {
+    background-color: purple;
+    cursor: pointer;
+}

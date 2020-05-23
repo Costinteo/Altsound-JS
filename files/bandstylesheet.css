@@ -1,0 +1,243 @@
+/* Smartphones (portrait and landscape) */
+@media all and (max-width: 480px) {
+    .hero {
+        height: 350px;
+    }
+
+    .hero-text {
+        font-size: 4vh !important;
+    }
+
+    .grid-main {
+        grid-template-columns: 100% !important;
+    }
+
+    .grid-main h2 {
+
+        font-size: 2rem !important;
+    
+    }
+
+    .grid-main img{
+        margin: 0 !important;
+        margin-bottom: 2rem !important;
+    }
+
+    #picture #album {
+
+        width: 100%!important;
+    
+    }
+
+    .track-image {
+        display: none !important;
+        position: absolute !important;
+        left: 0;
+        top: 0;
+    }
+    
+    .tracks {
+        margin-left: 0 !important;
+
+    }
+
+    #trackTitle {
+        margin-left: 0 !important;
+
+    }
+
+    #trackAudio {
+        margin-left: 0 !important;
+        width: 100% !important;
+
+    }
+
+    .info {
+        width: 100% !important;
+    }
+    
+
+ }
+
+/* Tablets */
+@media all and (min-width: 480px) and (max-width: 1023px) {
+    .hero {
+        height: 500px;
+    }
+
+    .hero-text {
+        font-size: 4vh !important;
+    }
+
+    .grid-main h2 {
+
+        font-size: 2rem !important;
+    
+    }
+
+    #picture #album {
+
+        width: 100%!important;
+    
+    }
+
+    .track-image {
+        display: none !important;
+        position: absolute !important;
+        left: 0;
+        top: 0;
+    }
+    
+    .tracks {
+        margin-left: 0 !important;
+
+    }
+
+    #trackTitle {
+        margin-left: 0 !important;
+
+    }
+
+    #trackAudio {
+        margin-left: 0 !important;
+        width: 100% !important;
+
+    }
+
+    .info {
+        width: 100% !important;
+    }
+
+ }
+
+/* Large devices */
+@media all and (min-width: 1024px) { 
+    .hero {
+        height: 800px;
+    }
+    
+
+ }
+
+.hero {
+    background-image: url("img/bands/dgd.jpg");
+}
+
+.hero-text {
+    font-size: 10vh;
+}
+
+.grid-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.social img{
+    width: 64px;
+    height: 64px;
+    padding: 0.2rem;
+    margin: 0 0.5rem;
+}
+
+#picture {
+
+    padding-top: 2rem;;
+
+}
+
+#picture #album {
+
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.75);
+
+}
+
+
+.grid-main p {
+
+    padding: 1rem;
+    text-align: justify;
+    font-size: 1.2rem;
+
+}
+
+.grid-main h2 {
+
+    font-size: 4rem;
+    padding: 1rem;
+    margin: 0;
+
+}
+
+.tracks {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+}
+
+.track h4 {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.track audio {
+    margin-left: 0.5rem;
+}
+
+.track-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.comment-space {
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.comment-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+#comment-content {
+    display: flex;
+    width: 33%;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.comment-form p {
+    margin: 0;
+    margin-top: 0.5rem;
+    padding: 0;
+
+}
+
+#heart {
+    cursor: pointer;
+    margin-left: auto;
+    width:50px;
+
+}
+
+

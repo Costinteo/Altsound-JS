@@ -1,0 +1,252 @@
+/* Smartphones (portrait and landscape) */
+@media all and (max-width: 480px) {
+    .hero {
+        height: 350px;
+    }
+
+    .bandlist .col {
+        width: 90%;
+    }
+    
+    #home-subtitle {
+
+        font-size: 1.5rem !important;
+
+    }
+ }
+
+/* Tablets */
+@media all and (min-width: 480px) and (max-width: 1023px) {
+    .hero {
+        height: 500px;
+    }
+
+    .bandlist .col {
+        width: 30%;
+    }
+ }
+
+/* Large devices */
+@media all and (min-width: 1024px) { 
+    .hero {
+        height: 800px;
+    }
+    
+    .bandlist .col {
+        width: 25%;
+        height: auto;
+    }
+ }
+
+#home-subtitle {
+
+    font-size: 8vh;
+
+}
+
+.text-center {
+
+    text-align: center;
+
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+h1 {
+    font-family: 'Roboto Slab', serif;
+}
+
+.ph {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.hero {
+    position: relative;
+    background-image: url("img/concerthu.jpg");
+    background-color: #cccccc;  
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.toplayer {
+    z-index: 10;
+    position: absolute;
+    background-image: url("img/piercetheveil.jpg");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.hero .text-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    z-index: 30;
+}
+
+.hero-text {
+    font-size: 10vw;
+    color: white;
+    text-shadow: 5px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.title-font {
+
+    font-family: 'Roboto Slab', serif;
+
+}
+
+.noise {
+    position: absolute;
+    background-image: url("img/black-noise.gif");
+    background-repeat: repeat;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+}
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.band {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.75);
+}
+
+.band-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.sixnine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -10;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.75);
+    opacity: 0;
+}
+
+.sixnine-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sixnine-container .band {
+    transition: opacity .3s ease-in;
+}
+.sixnine-container .sixnine {
+    transition: opacity .3s ease-in;
+}
+
+.sixnine-container:hover .band {
+    opacity: 0;
+}
+
+.sixnine-container:hover .sixnine {
+    opacity: 1;
+}
+
+#nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.nav-link a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.nav-link a:hover {
+    text-decoration: underline;
+}
+
+.band-finder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    text-align: center;
+
+}
+
+#randband {
+    margin: 0.5rem;
+    font-size: 5rem;
+}
+
+textarea {
+    resize: none;
+
+}
+
+button {
+    color: white !important;
+    background-color: rebeccapurple;
+    border: 1px solid purple;
+    border-radius: 0.2rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+}
+
+button:hover {
+    background-color: purple;
+    cursor: pointer;
+}

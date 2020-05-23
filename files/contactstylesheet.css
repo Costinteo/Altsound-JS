@@ -1,0 +1,108 @@
+/* Smartphones (portrait and landscape) */
+@media all and (max-width: 480px) {
+    .hero {
+        height: 350px;
+    }
+
+    .grid-main {
+        grid-template-columns: 100% !important;
+    }
+
+    .grid-main img{
+        margin: 0 !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .form {
+        max-width: 89% !important;
+        margin: 0 !important;
+        padding: 0 1rem !important;
+    }
+
+ }
+
+/* Tablets */
+@media all and (min-width: 480px) and (max-width: 1023px) {
+    .hero {
+        height: 500px;
+    }
+
+    .form {
+        max-width: 75% !important;
+    }
+
+ }
+
+/* Large devices */
+@media all and (min-width: 1024px) { 
+    .hero {
+        height: 800px;
+    }
+ }
+
+.hero {
+    background-image: url("img/dgdtilian.jpg");
+}
+
+h1 {
+    font-size: 4rem;
+
+}
+
+.form-type {
+    align-items: center;
+}
+
+.form-type label {
+    margin-right: 1.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    margin: 0 auto;
+    margin-bottom: 2.5rem;
+}
+
+.form div {
+    display: flex;
+    margin-bottom: 0.75rem;
+}
+
+.form-element input {
+    width: 100%;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+.form-element textarea {
+    width: 100%;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+.form-element select {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid grey;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+.button {
+    color: white !important;
+    background-color: rebeccapurple;
+    border: 1px solid purple;
+    border-radius: 0.2rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+}
+
+.button:hover {
+    background-color: purple;
+    cursor: pointer;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <%- include('./head.ejs'); %>
+
+</head>
+
+<body onload="onLoad()">
+<div class="hero">
+    <div class="toplayer hidden"></div>
+    <%- include('./nav.ejs'); %>
+
+    <div class="noise"></div>
+    <div class="text-container">
+        <h1 class="hero-text">ALTSOUND</h1>
+    </div>
+</div>
+
+<h2 id="home-subtitle" class="text-center title-font ph">All the artists you love to hear!</h2>
+
+<div class="bandlist">
+    <div class="row justify-content-around">
+        <div class="col">
+            <img class="band" src="/img/squares/pierce.jpg">
+            <p class="band-title text-center title-font">Pierce the Veil</p>
+        </div>
+
+        <div class="col">
+            <img class="band" src="/img/squares/pup.jpg">
+            <p class="band-title text-center title-font">PUP</p>
+        </div>
+
+        <div class="col">
+            <a href = "/dgd"><img class="band" src="/img/squares/dancegavin.jpeg"></a>
+            <p class="band-title text-center title-font">Dance Gavin Dance</p>
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col">
+            <img class="band" src="/img/squares/peep.jpg">
+            <p class="band-title text-center title-font">Lil Peep</p>
+        </div>
+
+        <div class="col">
+            <img class="band" src="/img/squares/joji.jpg">
+            <p class="band-title text-center title-font">Joji</p>
+        </div>
+
+        <div class="col">
+            <div class="sixnine-container">
+                <img class="sixnine" src="/img/squares/69meme.jpg">
+                <img class="band" src="/img/squares/6ix9ine.jpg">
+            </div>
+            <p class="band-title text-center title-font">6ix9ine</p>
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <div class="col">
+            <img class="band" src="/img/squares/placebo.jpg">
+            <p class="band-title text-center title-font">Placebo</p>
+        </div>
+
+        <div class="col">
+            <img class="band" src="/img/squares/setitoff.jpg">
+            <p class="band-title text-center title-font">Set It Off</p>
+        </div>
+
+        <div class="col">
+            <img class="band" src="/img/squares/coma.jpg">
+            <p class="band-title text-center title-font">Coma</p>
+        </div>
+    </div>
+</div>
+
+<div class="band-finder">
+
+    <div>
+        <h2>Click to get a band suggestion!</h2>
+        <button onclick="getband()">Click me!</button>
+        <div id="randband">
+        </div>
+    </div>
+
+
+</div>
+<script src = "/index.js"></script>
+</body>
+
+</html>

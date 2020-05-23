@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <%- include('./head.ejs'); %>
+    <link rel="stylesheet" type="text/css" href="/registerstylesheet.css">
+
+</head>
+
+<body>
+<div class="hero">
+    <%- include('./nav.ejs'); %>
+
+    <div class="noise"></div>
+    <div class="text-container">
+        <h1 class="hero-text">ALTSOUND</h1>
+    </div>
+</div>
+
+<% if (locals.message) { %>
+    <div id = "alert"><%= locals.message %></div>
+<% } %>
+<form action="/register" method="POST">
+    <div class="register-page">
+        <div class="form-input">
+            <input type="email" name="email" placeholder="example@email.com">
+        </div>
+
+        <div class="form-input">
+            <input type="text" name="username" placeholder="Username">
+        </div>
+
+        <div class="form-input">
+            <input type="password" name="password" placeholder="Password">
+        </div>
+
+        <div class="form-input">
+            <select id="genres" name="fav_genre">
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="jazz">Jazz</option>
+                <option value="country">Country</option>
+                <option value="R&B">R&B</option>
+            </select>
+        </div>
+
+        <div class="form-input">
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </div>
+
+        <div class="form-input">
+            <input type="checkbox" id="newsletter" name="newsletter" value="newsletter">
+            <label for="newsletter"> I want to receive the newsletter</label><br>
+        </div>
+        <div class="captcha">
+            <div class="flexrow">
+                <div class="captcha-display">
+
+                </div>
+                <img src="/img/refresh.svg" onclick="showCaptcha()">
+
+            </div>
+            <div class="flexrow">
+                <input type="text" id="captchainput" name="captcha" placeholder="Type captcha here">
+
+            </div>
+
+        </div>
+        <button>Register</button>
+    </div>
+</form>
+<script src="captcha.js"></script>
+</body>
+</html>

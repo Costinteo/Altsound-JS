@@ -1,0 +1,71 @@
+/* Smartphones (portrait and landscape) */
+@media all and (max-width: 480px) {
+    .hero {
+        height: 350px;
+    }
+
+    .grid-main {
+        grid-template-columns: 100% !important;
+    }
+
+    .grid-main img{
+        margin: 0 !important;
+        margin-bottom: 2rem !important;
+    }
+
+ }
+
+/* Tablets */
+@media all and (min-width: 480px) and (max-width: 1023px) {
+    .hero {
+        height: 500px;
+    }
+
+ }
+
+/* Large devices */
+@media all and (min-width: 1024px) { 
+    .hero {
+        height: 800px;
+    }
+    
+
+ }
+
+.hero {
+    background-image: url("img/vicfuentes.jpg");
+}
+
+.grid-main {
+
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem;
+    gap: 2rem;
+
+}
+
+img {
+
+    width: 100%;
+    margin: 1rem;
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.75);
+
+}
+
+.grid-main p {
+
+    padding: 1rem;
+    text-align: justify;
+    font-size: 1.2rem;
+
+}
+
+.grid-main h2 {
+
+    font-size: 4rem;
+    padding: 1rem;
+    margin: 0;
+
+}
+

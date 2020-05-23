@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <%- include('./head.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/bandstylesheet.css">
+
+</head>
+
+<body onload="initComments(); updateHeart()">
+<div class="hero">
+    <%- include('./nav.ejs') %>
+
+    <div class="noise"></div>
+    <div class="text-container">
+        <h1 class="hero-text">DANCE GAVIN DANCE</h1>
+    </div>
+</div>
+
+<div class="grid-main">
+    <div class="text">
+        <h2 class="title-font">About us: <img src="/img/fav2.svg" id="heart" onclick="onClick()"></h2>
+        <p>
+            &emsp;Dance Gavin Dance is an American rock band from Sacramento, California, formed in 2005. The band currently consists of vocalists Tilian Pearson and Jon Mess, lead guitarist Will Swan, bass guitarist Tim Feerick, and drummer Matthew Mingus. The band formerly included lead vocalists Jonny Craig and Kurt Travis. Swan and Mingus are the only band members who have appeared on every studio album.
+            <br>
+            &emsp;The band released their debut extended play (EP), Whatever I Say Is Royal Ocean, in 2006 and signed to Rise Records thereafter. Their debut studio album, Downtown Battle Mountain, was released in May 2007. Craig and guitarist Sean O'Sullivan left the group and were replaced by Kurt Travis and Zachary Garren, respectively. They released their self-titled second album in August 2008. Vocalist Jon Mess and bassist Eric Lodge left the group before the album's release, with Lodge being replaced by Jason Ellis. Happiness, the group's third studio album, was released in June 2009.
+            <br>
+            &emsp;In 2010, Jonny Craig, Jon Mess and Eric Lodge returned to the band and recorded their fourth studio album, Downtown Battle Mountain II (2011). Craig and Lodge departed from the group the following year, which led to former Tides of Man vocalist Tilian Pearson, bassist Tim Feerick, and guitarist Josh Benton joining the band. They released their fifth studio album, Acceptance Speech (2013); Benton left the band shortly after the album's release. Their sixth studio album, Instant Gratification, was released in April 2015. The following year, the group released the live album, Tree City Sessions, and their seventh studio album, Mothership, the latter charting at number 13 on the Billboard 200. In 2017, they released a cover of the Bruno Mars single "That's What I Like" for Punk Goes Pop Vol. 7, a stand-alone single "Summertime Gladness", and toured on the Vans Warped Tour. They released their eighth studio album, Artificial Selection, in June 2018, placing at number 15 on the Billboard 200. The band has scored two top 20 albums in the US and have become one of the most popular and prominent music groups in post-hardcore.
+        </p>
+
+        <select id="trackSelect" onchange="trackChanged()">
+            <option value="1">01 - Prisoner</option>
+            <option value="2">02 - Lyrics Lie</option>
+            <option value="3">03 - Strawberry's Wake</option>
+        </select>
+
+        <div class="tracks">
+            <div class="track">
+                <img class="track-image" height="128px" width="128px" src="/img/bands/trackimg.jpg">
+                <div class="info">
+                    <h4 id="trackTitle">01 - Prisoner</h4>
+                    <audio id="trackAudio" controls src="/audio/prisoner.mp3"></audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="picture">
+        <a href = "https://riserecords.lnk.to/afterburner"><img id="album" src = "/img/bands/afterburner.png"></a>
+        <div class="social">
+            <a href = "https://www.facebook.com/DanceGavinDance"><img src = "/img/social/fb.png"></a>
+            <a href = "https://www.instagram.com/dancegavindance/"><img src = "/img/social/insta.png"></a>
+            <a href = "https://open.spotify.com/artist/6guC9FqvlVboSKTI77NG2k?si=xgy6dCaCTMeOeUL50GgCAQ"><img src = "/img/social/spotify.png"></a>
+        </div>
+        <div class="comment-space" id = "commarea">
+
+        </div>
+        <% if (user) { %>
+        <form class="comment-form" onsubmit="postComment(this)" action="javascript:;">
+            <p>Logged as: <%= user.username %></p>
+            <textarea type="text" id="comment-content"></textarea>
+            <button>Post comment</button>
+        </form>
+        <% } %>
+    </div>
+
+
+</div>
+
+
+<script src="/band.js">
+</script>
+</body>
+
+
+
+
+</html>

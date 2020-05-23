@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <%- include('./head.ejs')%>
+    <link rel="stylesheet" type="text/css" href="/contactstylesheet.css">
+</head>
+
+<body>
+<div class="hero">
+    <%- include('./nav.ejs')%>
+
+    <div class="noise"></div>
+    <div class="text-container">
+        <h1 class="hero-text">ALTSOUND</h1>
+    </div>
+</div>
+
+<h1 class="text-center">Contact us!</h1>
+
+<div class="form">
+    <div class="form-element">
+        <input id="formName" type="text" placeholder="Enter your name">
+    </div>
+
+    <div class="form-element form-type">
+        <label for="formtype">Select your issue type:</label>
+
+        <select id="formtype">
+            <option value="enquiry">General enquiry</option>
+            <option value="billing">Billing</option>
+            <option value="jobs">Jobs</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-element">
+        <textarea id="formMessage" rows="10" placeholder="Enter your message"></textarea>
+    </div>
+
+    <button class="button" onclick="sendForm()">Send</button>
+</div>
+
+</div>
+</body>
+
+<script>
+    function sendForm() {
+        document.getElementById("formName").value = '';
+        document.getElementById("formMessage").value = '';
+    }
+</script>
+
+
+</html>

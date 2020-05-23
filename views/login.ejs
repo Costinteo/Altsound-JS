@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <%- include('./head.ejs'); %>
+    <link rel="stylesheet" type="text/css" href="/registerstylesheet.css">
+
+</head>
+
+<body>
+<div class="hero">
+    <%- include('./nav.ejs'); %>
+
+    <div class="noise"></div>
+    <div class="text-container">
+        <h1 class="hero-text">ALTSOUND</h1>
+    </div>
+</div>
+
+<% if (locals.message) { %>
+<div id = "alert"><%= locals.message %></div>
+<% } %>
+<form action="/login" method="POST">
+    <div class="register-page">
+        <div class="form-input">
+            <input type="email" name="email" placeholder="example@email.com">
+        </div>
+
+        <div class="form-input">
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <button>Login</button>
+    </div>
+</form>
+
+</body>
+</html>
