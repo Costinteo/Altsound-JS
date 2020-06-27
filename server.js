@@ -65,15 +65,21 @@ const express = require('express')
 const session = require('express-session')
 const app = express()
 const bodyparser = require('body-parser')
+const WebSocket = require('ws');
+const FileStore = require('session-file-store')(session);
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }));
 app.set("view engine", "ejs")
 app.use(express.static("files"))
-app.use(session({
+
+let sessionParser = session({
     secret: 'whisper',
     resave: false,
-    saveUninitialized: true
-}))
+    saveUninitialized: true,
+    store: new FileStore()
+})
+
+app.use(sessionParser)
 
 connection.connect();
 
@@ -106,6 +112,10 @@ app.get('/dgd', function (req, res) {
 
 app.get('/register', function (req, res) {
     res.render("register")
+})
+
+app.get('/chat', function (req, res) {
+    res.render("chat");
 })
 
 app.post('/register', function (req, res) {
@@ -202,9 +212,123 @@ app.post('/api/captcha', function(req, res) {
     else res.status(400).end();
 })
 
+app.get('/api/getuser', function(req, res) {
+    res.json({
+        username : req.session.user.username
+    })
+})
+
+
 app.get('*', function(req, res) {
     res.status(404).render('404')
 
 })
 
-app.listen(3000)
+const http = require('http');
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ clientTracking: false, noServer: true });
+
+server.on('upgrade', function (request, socket, head) {
+    console.log('Parsing session from request...');
+
+    sessionParser(request, {}, () => {
+        if (!request.session.user) {
+            console.log("nu suntem logati");
+            socket.destroy();
+            return;
+        }
+
+        console.log('Session is parsed!');
+
+        wss.handleUpgrade(request, socket, head, function (ws) {
+            wss.emit('connection', ws, request);
+        });
+    });
+});
+
+let users = [];
+
+function sendusers() {
+    for (let u of users) {
+        u.socket.send(JSON.stringify({
+                action: 'getusers',
+                users: users.map(user => user.username)
+            }
+        ))
+    }
+}
+
+wss.on('connection', function(client, req) {
+
+    users.push({
+        socket: client,
+        username: req.session.user.username,
+        color: '#000000'
+    });
+
+    sendusers();
+
+    for (let u of users) {
+        u.socket.send(JSON.stringify({
+            action: 'send',
+            username: "ALTSOUND",
+            text: "Bun venit, " + req.session.user.username
+        }))
+    }
+
+    client.on('message', function(message) {
+        message = JSON.parse(message);
+        console.log('received: %s', message);
+        let user = users.find(user => user.socket === client);
+        if (message.action === "changecolor") {
+            user.color = message.color;
+            for (let u of users) {
+                u.socket.send(JSON.stringify({
+                    action : "changecolor",
+                    username : req.session.user.username,
+                    color : user.color
+                }))
+            }
+            console.log('utilizator vrea s aschimbe culaorea la ' + message.color);
+        } else if (message.action === 'send') {
+            for (let u of users) {
+                u.socket.send(JSON.stringify({
+                    action : 'send',
+                    username : req.session.user.username,
+                    text : message.text,
+                    color : user.color
+                }))
+            }
+        } else {
+            console.error("nu e bn");
+            console.log("ce e asta???A?DFASfASf " + message.action);
+        }
+    });
+
+
+
+    client.on('close', function(code, reason) {
+        console.log(`connection closed code: ${code} reason ${reason}`);
+        users = users.filter(user => user.socket !== client);
+        for (let u of users) {
+            u.socket.send(JSON.stringify({
+                action: 'send',
+                username: "ALTSOUND",
+                text: "La revedere, " + req.session.user.username
+            }))
+        }
+        sendusers();
+    });
+
+
+});
+
+wss.on('error', function(err) {
+    console.log(err);
+})
+
+server.listen(3000, function () {
+    console.log('Listening on http://localhost:8080/)');
+});
+
+// nodemon server.js --ignore sessions/

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('./head.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/chat.css">
+
+</head>
+<body>
+<div class="hero">
+    <div class="toplayer hidden"></div>
+    <%- include('./nav.ejs'); %>
+
+    <div class="noise"></div>
+    <div class="text-container">
+        <h1 class="hero-text">ALTSOUND</h1>
+    </div>
+</div>
+
+<div class = "container">
+<div class = "chat-wrapper">
+    <div class = "chat">
+        <div id = "chat-log">
+
+        </div>
+        <div class = "online">
+            <div>
+                <button onclick="getUsers()">Show Online Users</button>
+            </div>
+
+            <div style = 'display : none' id = 'userlist'>
+
+            </div>
+        </div>
+    </div>
+    <div class = "textbox">
+    <input type = "text" id = "msg">
+    <input type = "color" id = "pickcolor">
+    </div>
+
+</div>
+<div>
+    <button onclick="addEmoji(0x1F171)">🅱️</button>
+    <button onclick="addEmoji(0x1F44E)">👎</button>
+    <button onclick="addEmoji(0x1F4AA)">💪</button>
+    <button onclick="addEmoji(0x1F920)">🤠</button>
+    <button onclick="addEmoji(0x1F603)">😃</button>
+</div>
+</div>
+</body>
+
+<script src="/chat.js">
+</script>
+
+</html>
